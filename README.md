@@ -14,7 +14,6 @@
 4. [Understanding the Output](#understanding-the-output)
 5. [Results and Observations](#results-and-observations)
 6. [Technical Discussion](#technical-discussion)
-7. [Troubleshooting](#troubleshooting)
 
 ---
 
