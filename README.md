@@ -170,7 +170,18 @@ Build complete! Run with: ./bicgstab_solver
 
 
 ```
+===================================================
+     OpenMP Parallelized BICGSTAB Solver
+     2D Laplace Equation on Unit Square
+===================================================
+Boundary Conditions:
+  Bottom, Left, Right: T = 0
+  Top: T = 1
+===================================================
+
+
 ***** TEST 1: Small Grid (~100 nodes) *****
+
 ========================================
 Grid Size: 10 x 10 = 100 nodes
 ========================================
@@ -190,9 +201,75 @@ Final residual norm: 8.769798e-09
 --- Parallel BICGSTAB ---
 Threads    Time (s)        Speedup         Efficiency
 ------------------------------------------------------
+BICGSTAB (parallel, 2 threads) converged at iteration 25 (residual: 7.30e-09)
 2          0.005335        0.01            0.5       %
+BICGSTAB (parallel, 4 threads) converged at iteration 22 (residual: 6.90e-09)
 4          0.006698        0.01            0.2       %
+BICGSTAB (parallel, 8 threads) converged at iteration 25 (residual: 9.29e-09)
 8          0.016381        0.00            0.0       %
+
+
+***** TEST 2: Medium Grid (~200 nodes) *****
+
+========================================
+Grid Size: 14 x 14 = 196 nodes
+========================================
+Creating FEM system: 14x14 grid (196 nodes)
+Matrix created: 196 nodes, 772 non-zeros
+
+=== FEM System Info ===
+Number of nodes: 196
+Number of non-zeros: 772
+Sparsity: 2.01%
+
+--- Serial BICGSTAB ---
+BICGSTAB converged at iteration 26 (residual: 7.52e-09)
+Time: 0.000075 seconds
+Final residual norm: 2.711064e-08
+
+--- Parallel BICGSTAB ---
+Threads    Time (s)        Speedup         Efficiency
+------------------------------------------------------
+BICGSTAB (parallel, 2 threads) converged at iteration 27 (residual: 8.24e-09)
+2          0.003421        0.02            1.1       %
+BICGSTAB (parallel, 4 threads) converged at iteration 27 (residual: 2.47e-09)
+4          0.006628        0.01            0.3       %
+BICGSTAB (parallel, 8 threads) converged at iteration 27 (residual: 8.38e-09)
+8          0.013913        0.01            0.1       %
+
+
+***** TEST 3: Large Grid (~400 nodes) *****
+
+========================================
+Grid Size: 20 x 20 = 400 nodes
+========================================
+Creating FEM system: 20x20 grid (400 nodes)
+Matrix created: 400 nodes, 1696 non-zeros
+
+=== FEM System Info ===
+Number of nodes: 400
+Number of non-zeros: 1696
+Sparsity: 1.06%
+
+--- Serial BICGSTAB ---
+BICGSTAB converged at iteration 43 (residual: 6.41e-09)
+Time: 0.000195 seconds
+Final residual norm: 2.793334e-08
+
+--- Parallel BICGSTAB ---
+Threads    Time (s)        Speedup         Efficiency
+------------------------------------------------------
+BICGSTAB (parallel, 2 threads) converged at iteration 42 (residual: 7.65e-09)
+2          0.004002        0.05            2.4       %
+BICGSTAB (parallel, 4 threads) converged at iteration 40 (residual: 7.78e-09)
+4          0.007069        0.03            0.7       %
+BICGSTAB (parallel, 8 threads) converged at iteration 43 (residual: 9.21e-09)
+8          0.017742        0.01            0.1       %
+
+
+===================================================
+               Benchmark Complete
+===================================================
 ```
 
 ### Output Metrics Explained
