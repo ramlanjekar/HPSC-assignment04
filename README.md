@@ -270,6 +270,7 @@ BICGSTAB (parallel, 8 threads) converged at iteration 43 (residual: 9.21e-09)
 ===================================================
                Benchmark Complete
 ===================================================
+
 ```
 
 ### Output Metrics Explained
